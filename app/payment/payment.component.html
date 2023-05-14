@@ -1,0 +1,65 @@
+
+<kendo-grid [data]="cardsSrv.cards "   >
+
+<kendo-grid-column field="gift" title="gift 🎁" [width]="150"
+    [headerStyle]="{ 'background-color': '#ced8d7' }"> </kendo-grid-column>
+<kendo-grid-column field="amount" title="cards"  [width]="150" [headerStyle]="{ 'background-color': '#ced8d7' }">
+</kendo-grid-column>
+
+</kendo-grid>
+
+<h3>total cost: {{totalPrice}}</h3>
+
+<div class="modal">
+    <div class="modal__container">
+      <div class="modal__featured">
+        <!-- <button type="button" class="button--transparent button--close">
+          <span class="visuallyhidden">Return to Product Page</span>
+        </button> -->
+        <div class="modal__circle"></div>
+        <!-- <img src="../img/dd.png" class="modal__product" /> -->
+      </div>
+      <div class="modal__content">
+        <h2>Your payment details</h2>
+
+        <form id="form">
+          <ul class="form-list">
+            <li class="form-list__row">
+              <label>Name</label>
+              <input type="text" name="" required="" />
+            </li>
+            <li class="form-list__row">
+              <label>Card Number</label>
+              <div id="input--cc" class="creditcard-icon">
+                <input type="text" name="cc_number" required="" />
+              </div>
+            </li>
+            <li class="form-list__row form-list__row--inline">
+              <div>
+                <label>Expiration Date</label>
+                <div class="form-list__input-inline">
+                  <input type="text" name="cc_month" placeholder="MM"  pattern="\\d*" minlength="2" maxlength="2" required="" />
+                  <input type="text" name="cc_year" placeholder="YY"  pattern="\\d*" minlength="2" maxlength="2" required="" />
+                </div>
+              </div>
+              <div>
+                <label>
+                  CVC
+                </label>
+                <input type="text" name="cc_cvc" placeholder="123" pattern="\\d*" minlength="3" maxlength="4" required="" />
+              </div>
+            </li>
+            <li class="form-list__row form-list__row--agree">
+              <label>
+                <input type="checkbox" name="save_cc" checked="checked">
+                Save my card for future purchases
+              </label>
+            </li>
+            <li>
+              <button (click)="pay()" class="button" >Pay Now</button>
+            </li>
+          </ul>
+        </form>
+      </div> <!-- END: .modal__content -->
+    </div> <!-- END: .modal__container -->
+  </div> <!-- END: .modal -->

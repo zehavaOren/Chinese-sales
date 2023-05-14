@@ -1,0 +1,10 @@
+
+<button (click)="ruffle()" >הגרלה והצגת זוכים</button>
+<table>
+    <tr *ngFor = " let g of gifts">
+        <td>{{g.name}}</td>
+        <td>{{g.winner.name}}</td>
+        <td>{{g.winner.phone}}</td>
+        <td>{{g.winner.email}}</td>
+    </tr>
+</table>

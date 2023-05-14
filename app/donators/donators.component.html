@@ -1,0 +1,32 @@
+
+<kendo-grid [data]="donatorSrv.donators | async" (edit)="editHandler($event)" (cancel)="cancelHandler($event)"
+    (save)="saveHandler($event)" (remove)="removeHandler($event)" (add)="addHandler($event)">
+    <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand>הוסף תורם</button>
+    </ng-template>
+    <kendo-grid-column field="id" title="ID" editor="numeric" [width]="150"
+        [headerStyle]="{ 'background-color': '#ced8d7' }"> </kendo-grid-column>
+    <kendo-grid-column field="name" title="Name" editor="text" [headerStyle]="{ 'background-color': '#ced8d7' }"
+        filter="text">
+        <ng-template kendoGridFilterMenuTemplate let-filter let-column="column" let-filterService="filterService">
+
+        </ng-template>
+    </kendo-grid-column>
+    
+    <kendo-grid-column field="email" title="donator email" editor="text"
+        [headerStyle]="{ 'background-color': '#ced8d7' }"> </kendo-grid-column>
+    <kendo-grid-column field="phone" title="donator phone" editor="text"
+        [headerStyle]="{ 'background-color': '#ced8d7' }"> </kendo-grid-column>
+    <kendo-grid-command-column title="command" [headerStyle]="{ 'background-color': '#ced8d7' }">
+        <ng-template kendoGridCellTemplate let-isNew="isNew">
+            <button kendoGridEditCommand [primary]="true">Edit</button>
+            <button kendoGridRemoveCommand>Remove</button>
+            <button kendoGridSaveCommand>
+                {{ isNew ? "Add" : "Update" }}
+            </button>
+            <button kendoGridCancelCommand>
+                {{ isNew ? "Discard changes" : "Cancel" }}
+            </button>
+        </ng-template>
+    </kendo-grid-command-column>
+</kendo-grid>

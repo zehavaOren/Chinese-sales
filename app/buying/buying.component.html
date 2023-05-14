@@ -1,0 +1,32 @@
+
+<div>
+    <h3>press 👍 for fill how manny cards you want for a gift  </h3>
+    <kendo-grid [data]="giftSrv.gifts | async" (edit)="editHandler($event)" 
+    (save)="saveHandler($event)"  >
+   
+    <kendo-grid-column field="id" title="gift code" editor="numeric" [width]="150" [headerStyle]="{ 'background-color': '#ced8d7' }"> </kendo-grid-column>
+
+    <kendo-grid-column field="name" title="Name" editor="text" [width]="150" [headerStyle]="{ 'background-color': '#ced8d7' }"></kendo-grid-column>
+
+    <kendo-grid-column field="price" title="price" editor="numeric" [width]="150" [headerStyle]="{ 'background-color': '#ced8d7' }"> </kendo-grid-column>
+
+    <!-- <kendo-grid-column field="cards" title="your cards for this gift" editor="numeric" [width]="180" [headerStyle]="{ 'background-color': '#ced8d7' }"> </kendo-grid-column> -->
+
+    <kendo-grid-command-column title=""  [width]="180"[headerStyle]="{ 'background-color': '#ced8d7' }">
+        <ng-template kendoGridCellTemplate let-isNew="isNew">
+            <button kendoGridEditCommand >👍</button>
+            <!-- <button kendoGridSaveCommand>Ok</button>
+            <button kendoGridCancelCommand> Cancel </button> -->
+        </ng-template>
+    </kendo-grid-command-column>
+</kendo-grid>
+
+
+
+<button id="btn" routerLink="payment" routerLinkActive="active">🎁 next </button>
+<router-outlet></router-outlet>
+
+</div>
+
+
+

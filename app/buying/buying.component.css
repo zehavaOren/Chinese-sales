@@ -1,0 +1,27 @@
+div{
+    align-items: center;
+    text-align: center;
+    width: 1000px;
+    margin-left: 26%;
+  
+        text-align: center;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+    
+}
+
+
+#btn{
+    
+    width: 1000px;
+    background-color: #006183;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+   
+}
+#btn:hover {
+    opacity: 0.8;
+}

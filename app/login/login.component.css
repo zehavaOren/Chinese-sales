@@ -1,0 +1,169 @@
+
+#first_background {
+  height: 100px;
+ /* background-color: #d5e3e9; */
+  /* background-color: 0,97,131;
+  background-image: url("../img/t.jpg") */
+}
+
+footer{
+    background-color: #006183;
+    height: 50px;
+ 
+    
+}
+
+/* button:hover {
+    opacity: 0.8;
+} */
+
+button {
+    background-color: #006183;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+    border-color: rgb(14, 1, 1);
+}
+button:hover{
+  background-color:#ced8d7 ;
+}
+/* .fading-5 {
+    background: 
+       linear-gradient(-45deg, transparent calc(100%/3), rgba(255, 255, 255, 0.5), transparent calc(200%/3)) 
+       bottom right/350% 100% no-repeat;
+    transition: 0.5s linear, background-size 0s 0.5s;
+  }
+  .fading-5:hover {
+    background-position: bottom left;
+    background-size: 0 0;
+  }
+  .inverted-6 {
+    padding:0 10px;
+    line-height: 1.4em;
+    background:
+     conic-gradient(from -115deg,#fff 50deg,#0000 0) var(--_p,-1.2em) 0/2.4em 1.2em,
+     conic-gradient(from -115deg,#000 50deg,#0000 0) var(--_p,-1.2em) 0/2.4em 1.2em,
+     linear-gradient(90deg,#fff calc(100% - 1.2em),#0000 0)  bottom 50% left 0/var(--_d,0%) 15px,
+     linear-gradient(90deg,#000 calc(100% - 1.2em),#0000 0)  bottom 50% left 0/var(--_d,0%) 15px,
+     #000;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    background-repeat: no-repeat;
+    transition: 0.5s; 
+   }
+   .inverted-6:hover {
+     --_d: 100%;
+     --_p: calc(100% + 1.2em);
+   }
+  
+   .fancy-3 {
+    outline:15px solid var(--c,#0000);
+    outline-offset: 100px;
+    background:
+     linear-gradient(#000 0 0) top,
+     linear-gradient(#000 0 0) left,
+     linear-gradient(#000 0 0) bottom,
+     linear-gradient(#000 0 0) right;
+    background-size: 100% 0,0 100%;
+    background-repeat: no-repeat;
+    transition: 0.3s 0.3s linear,background-size linear 0.3s,color 0.3s; 
+  }
+  .fancy-3:hover {
+   --c:#000;
+    color:#fff;
+    background-size: 100% 100%;
+    outline-offset: 0px;
+    transition: 0.3s linear,background-size linear 0.3s 0.3s,color 0.3s 0.3s; 
+  }
+
+  @property --g1{
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+  @property --g2{
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+  @property --g3{
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+  @property --g4{
+    syntax: '<number>';
+    inherits: false;
+    initial-value: 0;
+  }
+  .multicolor-4 {
+    padding:10px;    
+    background:
+      conic-gradient(from 30deg at 50% 60%,
+        rgb(81 75 130  / calc(var(--g1)*1%)) 1deg   100deg,
+        rgb(255 165 22 / calc(var(--g2)*1%)) 101deg 160deg,
+        rgb(240 51 85  / calc(var(--g3)*1%)) 161deg 250deg,
+        rgb(37 176 155 / calc(var(--g4)*1%)) 251deg) left,
+      conic-gradient(from -107deg at 40% 20%,
+        rgb(81 75 130  / calc(var(--g1)*1%)) 1deg   41deg,
+        rgb(255 165 22 / calc(var(--g2)*1%)) 41deg 150deg,
+        rgb(240 51 85  / calc(var(--g3)*1%)) 151deg 245deg,
+        rgb(37 176 155 / calc(var(--g4)*1%)) 221deg) center,
+      conic-gradient(from 80deg at 60% 80%,
+        rgb(81 75 130  / calc(var(--g1)*1%)) 1deg   100deg,
+        rgb(255 165 22 / calc(var(--g2)*1%)) 101deg 160deg,
+        rgb(240 51 85  / calc(var(--g3)*1%)) 161deg 250deg,
+        rgb(37 176 155 / calc(var(--g4)*1%)) 251deg) right;
+    background-size:33.33% 100%;
+    background-repeat: no-repeat;
+    transition:--g1 .4s,--g2 .3s .1s,--g3 .2s .2s,--g4 .3s .1s,color .4s;
+  }
+  
+  .multicolor-4:hover {
+    color:rgb(129, 90, 90);
+    --g1:100;
+    --g2:100;
+    --g3:100;
+    --g4:100;
+  }
+  .abstract-4 {
+    padding: 10px;
+    position: relative;
+    z-index: 0;
+    mix-blend-mode: darken;
+    transition: .2s;
+  }
+  .abstract-4:hover {
+    color: #fff;
+  }
+  .abstract-4:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -15px -30px;
+    padding: 6px;
+    background: 
+      repeating-conic-gradient(#000 0 10deg,#0000 0 20deg),
+      linear-gradient(#000 0 0),
+      #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    background-size: 80% 80%;
+    background-origin: content-box,content-box,padding-box;
+    background-clip: content-box,content-box,padding-box;
+    filter: blur(6px) contrast(30);
+    transition: .2s,opacity .3s;
+  }
+  .abstract-4:hover:before {
+    background-size: 100% 100%,85% 50%;
+    opacity: 1;
+    transition: .4s,opacity .2s;
+  }
+   */
+  
+  

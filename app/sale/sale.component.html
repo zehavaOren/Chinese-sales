@@ -1,0 +1,61 @@
+
+
+<kendo-grid  [data]="giftSrv.gifts | async" (edit)="editHandler($event)" (cancel)="cancelHandler($event)" (save)="saveHandler($event)"
+    (remove)="removeHandler($event)" (add)="addHandler($event)" [pageSize]="5"
+    [skip]="skip"
+    [pageable]="true"
+    (pageChange)="pageChange($event)" filterable="menu" [sortable]="true" [sort]="sort" (sortChange)="sortChange($event)">
+    <ng-template kendoGridToolbarTemplate>
+        <button kendoGridAddCommand>Add new gift</button>
+    </ng-template>
+    <kendo-grid-column field="id" title="ID" editor="numeric"  [width]="150" [headerStyle]="{ 'background-color': '#e9967a' }" >
+    </kendo-grid-column>
+
+    <kendo-grid-column field="name" title="Name" editor="text" [headerStyle]="{ 'background-color': '#e9967a' }" filter="text"> 
+        <ng-template
+        kendoGridFilterMenuTemplate
+        let-filter
+        let-column="column"
+        let-filterService="filterService">
+        <kendo-grid-string-filter-menu
+          [column]="column"
+          [filter]="filter"
+          [filterService]="filterService"
+          operator="startswith"
+        ><kendo-filter-startswith-operator></kendo-filter-startswith-operator>
+        <kendo-filter-eq-operator></kendo-filter-eq-operator>
+      </kendo-grid-string-filter-menu>
+    </ng-template>
+</kendo-grid-column>
+
+    <kendo-grid-column field="donator" title="donator name" editor="text" [headerStyle]="{ 'background-color': '#e9967a' }" filter="text"> </kendo-grid-column>
+
+    <kendo-grid-column field="price" title="Price" editor="numeric" [headerStyle]="{ 'background-color': '#e9967a' }" filter="numeric"> </kendo-grid-column>
+    <kendo-grid-command-column title="command" [headerStyle]="{ 'background-color': '#e9967a' }">
+        <ng-template kendoGridCellTemplate let-isNew="isNew">
+            <button kendoGridEditCommand [primary]="true">Edit</button>
+            <button kendoGridRemoveCommand>Remove</button>
+            <button kendoGridSaveCommand >
+                {{ isNew ? "Add" : "Update" }}
+            </button>
+            <button kendoGridCancelCommand>
+                {{ isNew ? "Discard changes" : "Cancel" }}
+            </button>
+        </ng-template>
+    </kendo-grid-command-column>
+</kendo-grid>
+<!-- <td >
+    <kendo-dropdownlist style="width: 200px;"
+    [data]="listItems"
+    textField="text"
+    valueField="value"
+  >
+  </kendo-dropdownlist>
+</td> -->
+ 
+
+<button >show gifts details</button>
+
+
+
+

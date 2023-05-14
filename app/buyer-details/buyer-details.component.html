@@ -1,0 +1,41 @@
+
+
+<div>
+
+</div>
+<form class="form"  autocomplete="off" [formGroup]="frmBuyerDetails" >
+    <div class="form-inner">
+      <h2>User Login</h2>
+      <div class="input-wrapper">
+        <label for="login-username">your name</label>
+        <div class="input-group">
+          <input id="name" type="text" data-lpignore="true"  formControlName="name"/>
+          <span *ngIf="frmBuyerDetails.controls['name'].touched && frmBuyerDetails.controls['name'].invalid">name is too
+            long</span>
+        </div>
+      </div>
+      <div class="input-wrapper">
+        <label for="email" >email address</label>
+        <div class="input-group">
+          <input id="email" type="email" data-lpignore="true" formControlName="email"/>
+          <span *ngIf="frmBuyerDetails.controls['email'].touched && frmBuyerDetails.controls['email'].invalid">email address is not correct
+        </span>
+        </div>
+      </div>
+      <div class="input-wrapper">
+        <label for="phone" >phone number</label>
+          <input id="phone" type="phone" formControlName="phone"/>
+          <span *ngIf="frmBuyerDetails.controls['phone'].touched && frmBuyerDetails.controls['phone'].invalid">it seems Ben-Laden's phone 👰🏾. try again</span><br>        
+      </div>
+      <div class="btn-group">
+        <button (click)="save()" [disabled]="frmBuyerDetails.invalid" routerLink="buying" routerLinkActive="active">yes I wanna be a part! 🖐 </button> 
+      </div>
+    </div>
+  </form>
+  <div>
+      
+  </div>
+ 
+  <br><br><br><br><br><br>
+  
+<router-outlet></router-outlet>
